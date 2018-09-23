@@ -1,12 +1,11 @@
 FROM openjdk:8-jdk
  
-COPY src/main/resources/basicdropwizard.yml /data/BasicDropwizard/basicdropwizard.yml  
-COPY /target/BasicDropwizard-1.0.0.jar /data/BasicDropwizard/BasicDropwizard-1.0.0.jar
+COPY /target/CryptoService-0.0.1-SNAPSHOT.jar /data/CryptoService/CryptoService-0.0.1-SNAPSHOT.jar
  
-WORKDIR /data/BasicDropwizard
+WORKDIR /data/CryptoService
  
 RUN java -version
  
-CMD ["java","-jar","BasicDropwizard-1.0.0.jar","basicdropwizard.yml"]
+CMD ["java","-jar","CryptoService-0.0.1-SNAPSHOT.jar","server"]
  
-EXPOSE 4000-4001
+EXPOSE 8080-8081
